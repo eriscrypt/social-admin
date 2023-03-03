@@ -1,0 +1,38 @@
+// base
+:root {
+  --h1: 3.052rem;
+}
+
+// colors
+:root {
+  --bg: radial-gradient(
+      122.09% 122.09% at 17.48% 22.33%,
+      rgba(59, 17, 91, 0.6) 0%,
+      rgba(0, 0, 0, 0) 81.87%
+    )
+    #161b2e;
+  --accent: #00d8cd;
+}
+
+// buttons
+:root {
+  --btn-height: 40px;
+  --btn-bg: #115663;
+}
+
+// inputs
+:root {
+  --input-height: 40px;
+}
+
+// navigation
+:root {
+  --nav-width: 260px;
+  --nav-bg: rgba(255, 255, 255, 0.05);
+  --nav-avatar-size: 100px;
+}
+
+// icons
+:root {
+  --icon-size: 32px;
+}

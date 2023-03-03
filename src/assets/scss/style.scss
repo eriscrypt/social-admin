@@ -1,0 +1,153 @@
+@import "./vars";
+@import "./fonts";
+@import "./reset";
+@import "./transitions.scss";
+
+* {
+  color: #fff;
+  font-family: Jura;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+img {
+  user-select: none;
+}
+
+#app {
+  height: 100vh;
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+}
+
+.view {
+  height: calc(100% - 40px);
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.view-title {
+  display: flex;
+  align-items: center;
+  height: 120px;
+}
+
+.view-content {
+  flex: 1;
+  border-radius: 10px;
+}
+
+.layout {
+  height: 100%;
+  display: flex;
+}
+
+input {
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0 0.75rem;
+  height: var(--input-height);
+  transition: all 0.3s ease;
+}
+
+input:active,
+input:focus {
+  border: 1px solid var(--accent);
+}
+
+input[type="password"]:not(:placeholder-shown) {
+  font-family: "pass", "Roboto", Helvetica, Arial, sans-serif;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+// connector modal
+.web3modal-modal-lightbox {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.web3modal-modal-card {
+  grid-template-columns: unset !important;
+  display: flex !important;
+  flex-direction: column;
+
+  max-width: 400px !important;
+  background: var(--bg) !important;
+  padding: 15px !important;
+  border-radius: 12px !important;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.web3modal-provider-wrapper {
+  border: none !important;
+}
+
+.web3modal-provider-container {
+  flex-direction: unset !important;
+  justify-content: unset !important;
+  gap: 20px;
+  padding: 0 20px !important;
+  height: 70px;
+  border-radius: 8px !important;
+  background: rgba(0, 0, 0, 0.15) !important;
+
+  .web3modal-provider-name {
+    width: auto;
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .web3modal-provider-icon {
+    width: 40px;
+  }
+
+  .web3modal-provider-description {
+    display: none;
+  }
+
+  &:hover {
+    background: rgba(0, 216, 205, 0.1) !important;
+  }
+}
