@@ -40,8 +40,6 @@
 }
 
 .table-body {
-  // display: grid;
-  // gap: 10px;
   height: 100%;
 }
 </style>

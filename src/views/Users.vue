@@ -170,8 +170,12 @@ onMounted(async () => {
 .user:hover {
   cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
-  scale: 0.99;
   border-color: var(--accent);
+}
+
+.user:active {
+  background: rgba(255, 255, 255, 0.2);
+  scale: 0.98;
 }
 
 .pagination {

@@ -56,7 +56,8 @@ withDefaults(defineProps<Props>(), {
 
 .icon:active,
 .icon:focus {
-  scale: 0.96;
+  background: rgba(255, 255, 255, 0.2);
+  scale: 0.98;
 }
 
 .icon.rotate:hover {
