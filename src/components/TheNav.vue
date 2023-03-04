@@ -14,7 +14,7 @@ const { user } = storeToRefs(useAuthStore());
           <img :src="`http://localhost:3000/users/${user.id}/avatar`" />
         </div>
         <div class="wallet">
-          {{ cutAddress(user.address) }}
+          <span>{{ cutAddress(user.address) }}</span>
         </div>
         <div class="balance">
           <span>{{ parseBalance(user.profile.balance, 4) }}</span>

@@ -2,7 +2,6 @@ import { createApp } from "vue";
 import router from "./router";
 import { Connector, EVENTS } from "vue-dapp-connector";
 import { MotionPlugin } from "@vueuse/motion";
-import { CanvasPlugin } from "./plugins/canvas";
 
 import App from "./App.vue";
 import "./assets/scss/style.scss";

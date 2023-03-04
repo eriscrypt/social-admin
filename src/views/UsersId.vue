@@ -72,8 +72,8 @@ onMounted(() => getUser(userId));
 <template>
   <div class="view container">
     <div class="view-title">
-      <div class="top-actions">
-        <router-link to="/users" class="back" v-motion-slide-right>
+      <div class="top-actions" v-motion-pop>
+        <router-link to="/users" class="back">
           <TheIcon name="fa-solid fa-chevron-left" />
         </router-link>
         <TheIcon
