@@ -6,7 +6,7 @@
       <slot name="head"></slot>
     </div>
     <div class="table-body">
-      <slot name="body"></slot>
+      <slot></slot>
     </div>
     <div class="table-foo">
       <slot name="foo"></slot>

@@ -46,50 +46,45 @@ onMounted(async () => {
         </div>
       </div>
 
+      <!--A possible optimization to the code provided-->
       <TheTable v-motion-fade>
-        <template #head>
-          <div class="head">
-            <span>#</span>
-            <span>avatar</span>
-            <span>email</span>
-            <span>confirmed</span>
-            <span>first name</span>
-            <span>last name</span>
-            <span>address</span>
-            <span>balance</span>
-          </div>
-        </template>
+        <div class="head">
+          <span>#</span>
+          <span>avatar</span>
+          <span>email</span>
+          <span>confirmed</span>
+          <span>first name</span>
+          <span>last name</span>
+          <span>address</span>
+          <span>balance</span>
+        </div>
 
-        <template #body v-if="users.length">
-          <div class="users" v-motion-fade>
-            <router-link
-              :to="`/users/${user.id}`"
-              class="user"
-              v-for="(user, index) in users"
-              :key="user.id"
-            >
-              <span>{{ index + 1 }}</span>
-              <span>
-                <img
-                  :src="`http://localhost:3000/users/${user.id}/avatar`"
-                  @error="loadDefaultAvatar($event)"
-                />
-              </span>
-              <span>{{ user.profile.email ?? "null" }}</span>
-              <span>{{ user.profile.confirmed }}</span>
-              <span>{{ user.profile.firstName ?? "null" }}</span>
-              <span>{{ user.profile.lastName ?? "null" }}</span>
-              <span>{{ cutAddress(user.address) }}</span>
-              <span>{{ parseBalance(user.profile.balance, 4) }}</span>
-            </router-link>
-          </div>
-        </template>
+        <div class="users" v-if="users.length">
+          <router-link
+            v-for="(user, index) in users"
+            :key="user.id"
+            :to="`/users/${user.id}`"
+            class="user"
+          >
+            <span>{{ index + 1 }}</span>
+            <span>
+              <img
+                :src="`http://localhost:3000/users/${user.id}/avatar`"
+                @error="loadDefaultAvatar($event)"
+              />
+            </span>
+            <span>{{ user.profile.email ?? "null" }}</span>
+            <span>{{ user.profile.confirmed }}</span>
+            <span>{{ user.profile.firstName ?? "null" }}</span>
+            <span>{{ user.profile.lastName ?? "null" }}</span>
+            <span>{{ cutAddress(user.address) }}</span>
+            <span>{{ parseBalance(user.profile.balance, 4) }}</span>
+          </router-link>
+        </div>
 
-        <template #body v-else>
-          <div class="no-users" v-motion-pop>
-            <TheSpinner color="var(--accent)" />
-          </div>
-        </template>
+        <div class="no-users" v-else>
+          <TheSpinner color="var(--accent)" />
+        </div>
 
         <template #foo>
           <div class="total">
